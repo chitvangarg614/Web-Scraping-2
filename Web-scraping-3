@@ -1,0 +1,49 @@
+#For web-scraping, we need to install all required libraries like(BeautifulSoup & request):
+#Here the syntax for installing the librariers with help of our terminal or CMD 
+#write a simple pip syntax for library installation
+-pip install BeautifulSoup
+-pip install request
+*******************************************************************************************
+#Import the required libraries:
+===============================
+import urllib
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+from random import randint
+
+#Now will make a list of some ULRs & will do looping:
+======================================================
+url = "https://www.w3schools.com/"
+req_file=urllib.request.urlopen(url).read()
+soup=BeautifulSoup(req_file,"html.parser")
+
+##Now will make some information list of some ULRs & will do looping:(Tutorials,Referances,Exercises)
+======================================================================================================
+for list in lists:
+    Tutorials= list.find_all('a',class_="w3-button w3-block")
+    Referances= list.find_all('a',class_="w3-bar-item w3-button w3-hide-small barex bar-item-hover w3-padding-24")
+    Exercises= list.find_all('a',class_="w3-bar-item w3-button w3-hide-small barex bar-item-hover w3-padding-24 ws-hide-800")
+    info= [Tutorials,Referances,Exercises]
+    #print(info)
+    
+    #Here we have looped all URLs:
+    =================================
+urls = []
+for link in soup.find_all('a'):
+#Print all URLs for get the all url data :   
+    print(link.get('href')) 
+    
+#Now we will create the table for the given list of Urls:
+#For table will import the panda libtrary as pd:
+=========================================================
+
+soup = BeautifulSoup(html_string, 'html') # Parse the HTML as a string
+table = soup.find_all('table')[0] # Grab the first table
+new_table = pd.DataFrame(columns=range(0,2), index = [0]) # I know the size
+
+for table in soup.find_all('table'):
+#Print all table for get the all table data:
+ print(table)
+
+
